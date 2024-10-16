@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Glasses for the Deaf</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #1c2a48;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #233658;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ffd700;
+            color: #1c2a48;
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            opacity: 0;
+            color: #1c2a48;
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0;
+            color: #34495e;
+        }
+        .main-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            opacity: 0;
+        }
+        .content {
+            padding: 50px 0;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: none;
+        }
+        .video-container video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #ffd700;
+            color: #1c2a48;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #1c2a48;
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Smart Glasses for the Deaf</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="#" id="mechanical">Mechanical Design</a>
+        <a href="#" id="hardware">Hardware Design</a>
+        <a href="#" id="software">Software Design</a>
+    </nav>
+    
+    <div class="hero">
+        <div class="container">
+            <h1>Revolutionizing Communication</h1>
+            <p>Empowering the deaf community with cutting-edge smart glasses technology</p>
+            <img src="/api/placeholder/600/400" alt="Smart Glasses for the Deaf" class="main-image">
+            <a href="#" class="btn">Learn More</a>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="container">
+            <div class="video-container" id="mechanicalVideo">
+                <video controls>
+                    <source src="#" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Initial animation
+            gsap.from(".hero h1", {duration: 1, y: 50, opacity: 0, ease: "power3.out"});
+            gsap.from(".hero p", {duration: 1, y: 50, opacity: 0, ease: "power3.out", delay: 0.5});
+            gsap.from(".main-image", {duration: 1, scale: 0.8, opacity: 0, ease: "power3.out", delay: 1});
+            gsap.from(".btn", {duration: 1, y: 20, opacity: 0, ease: "power3.out", delay: 1.5});
+
+            // Navigation functionality
+            document.getElementById('mechanical').addEventListener('click', function() {
+                document.getElementById('mechanicalVideo').style.display = 'block';
+            });
+
+            document.getElementById('hardware').addEventListener('click', function() {
+                alert('Hardware Design section coming soon!');
+            });
+
+            document.getElementById('software').addEventListener('click', function() {
+                alert('Software Design section coming soon!');
+            });
+        });
+    </script>
+</body>
+</html>
